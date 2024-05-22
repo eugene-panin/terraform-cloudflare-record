@@ -1,6 +1,6 @@
 variable "cloudflare_api_token" {
   type        = string
-  description = "API Key for Cloudflare account"
+  description = "API Token for Cloudflare account"
 }
 
 variable "full_domain_name" {

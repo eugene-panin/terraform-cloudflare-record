@@ -20,7 +20,7 @@ Add the module to your Terraform configurations, set the required variables, and
 
 ```hcl
 module "cloudflare_dns" {
-  source          = "path/to/module"
+  source          = "git::https://github.com/eugene-panin/terraform-cloudflare-record.git?ref=v0.0.1"
   domain          = "example.com"
   target_address  = ["192.0.2.1", "198.51.100.1"]
   proxied         = true

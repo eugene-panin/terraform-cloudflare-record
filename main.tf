@@ -1,11 +1,20 @@
+terraform {
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "4.33.0"
+    }
+  }
+}
+
+provider "cloudflare" {
+  api_token = var.cloudflare_api_token
+}
+
 locals {
   domain = split(".", var.full_domain_name)
   name   = element(local.domain, 0)
   zone   = join(".", slice(local.domain, 1, length(local.domain)))
-}
-
-provider "cloudflare" {
-  api_key = var.cloudflare_api_key
 }
 
 data "cloudflare_zones" "selected" {
